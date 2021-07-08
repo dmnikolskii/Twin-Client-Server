@@ -1,0 +1,51 @@
+{
+  "name": "twinsense",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@mapbox/node-pre-gyp": "^1.0.5",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "mysql": "github:mysqljs/mysql",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-dropdown": "^1.9.2",
+    "react-multi-carousel": "^2.6.3",
+    "react-responsive": "^8.2.0",
+    "react-responsive-combo-box": "^1.2.4",
+    "react-scripts": "4.0.3",
+    "react-slick": "^0.28.1",
+    "react-styled-carousel": "^0.5.1",
+    "slick-carousel": "^1.8.1",
+    "sqlite3": "^5.0.2",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "react-alice-carousel": "^2.5.1"
+  }
+}

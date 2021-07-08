@@ -1,0 +1,312 @@
+@media  (orientation: landscape) {
+    .main_page_grid_background {
+        max-height: none;
+        max-width: none;
+        position: absolute;
+        display: grid;
+        grid-template-columns: fit-content(17%) auto;
+        grid-template-rows: 100%;
+        
+        grid-template-areas: "sidepanel contentview";
+        width: 100vw;
+        height: auto;
+        margin: 0;
+        left: 0px;
+        top: 0px;
+    }
+
+    .side_bar {
+        grid-area: sidepanel;
+        display: flex;
+        flex-direction: column;
+        min-width: 145px;
+        max-height: none;
+        max-width: none;
+        background-color: #7c0404;
+        width: 100%;
+        height: 100%;
+        /*-webkit-box-shadow: -4px 0px 5px 0px rgba(0,0,0,0.55) inset;
+        box-shadow: -4px 0px 5px 0px rgba(0,0,0,0.55) inset;  */  
+    }
+
+    .twin_logo {
+        resize: both;
+        justify-content: center;
+        display: flex;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        width: 95%;
+    }
+
+    .logo {
+        width: 35%;
+        height: 100%;
+        margin: 0;
+        margin-right: 0px;
+        min-width: none;
+        min-height: none;
+        max-width: none;
+    }
+
+    .separator_line {
+        height:1px;
+        margin: 20 0 20 0;
+        width: 100%;
+        max-width: none;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: white;
+        -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.95), 0px -4px 5px 0px rgba(0,0,0,0.95); 
+        box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.95), 0px -4px 5px 0px rgba(0,0,0,0.95);   
+
+    }
+
+    .side_button {
+        position: relative;
+        cursor: pointer;
+        border-radius: 20px 0% 0% 20px;
+        display: flex;
+        margin: 0;
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        -webkit-border-radius: 20px 0% 0% 20px;
+        -moz-border-radius: 20px 0% 0% 20px;
+        -ms-border-radius: 20px 0% 0% 20px;
+        -o-border-radius: 20px 0% 0% 20px;
+    }
+
+    .side_button.active b:nth-child(1) {
+        
+        position: absolute;
+        top: -15px;
+        right: 0px;
+        height: 15px;
+        width: 100%;
+        background-color: #262626;            
+    }
+
+    .side_button.active b:nth-child(1):before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        border-bottom-right-radius: 10px;
+        background-color:#7c0404;
+    }
+    
+    .side_button.active b:nth-child(2) {
+        
+        position: absolute;
+        bottom: -15px;
+        height: 15px;
+        right: 0px;
+        width: 100%;
+        background-color: #262626;            
+    }
+
+    .side_button.active b:nth-child(2):before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        border-top-right-radius: 10px;
+        background-color:#7c0404;
+    }
+
+    .sidebar_resizable_font {
+        font-size: 1.5vw;
+    }
+}
+
+@media  (min-width: 1300px) {
+    .main_page_grid_background {
+        max-height: none;
+        max-width: none;
+        position: absolute;
+        display: grid;
+        grid-template-columns: fit-content(12vw) auto;
+        grid-template-rows: auto;
+        
+        grid-template-areas: "sidepanel contentview";
+        width: 100vw;
+        height: auto;
+        margin: 0;
+        left: 0px;
+        top: 0px;
+        padding-bottom: 50px;
+    }
+
+    .side_button p {
+        font-size: 1.2vw;
+        margin-left: 10px;
+    }
+}
+
+.margin-left0 {
+    margin-left: 0px;
+}
+
+.margin-right0 {
+    margin-right: 0px;
+}
+
+.active {
+    transition: 0.0s;
+    -webkit-transition: 0.0s;
+    -moz-transition: 0.0s;
+    -ms-transition: 0.0s;
+    -o-transition: 0.0s;
+    /*background-color: #940505;*/
+    background-color: #262626;
+    /*-webkit-box-shadow: 0px 4px 2px 0px rgba(0,0,0,0.25), 0px -2px 2px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 4px 2px 0px rgba(0,0,0,0.25), 0px -2px 2px 0px rgba(0,0,0,0.25);*/
+}
+
+.side_button:not(.active):hover {
+    -webkit-box-shadow: -2px 4px 2px 0px rgba(0,0,0,0.25), -2px -4px 2px 0px rgba(0,0,0,0.25); 
+    box-shadow: -2px 4px 5px 0px rgba(0,0,0,0.25), -2px -4px 2px 0px rgba(0,0,0,0.25);
+}
+
+.side_button {
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+
+.button_ico {
+    color: white;
+    margin: 0;
+    width: 20%;
+    min-width: 17px;
+}
+
+.content_view {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    max-height: none;
+    max-width: none;
+    grid-area: contentview;
+    background-color: #262626;
+    
+}
+
+
+@media (max-width: 1100px) and (min-height: 500px), screen and (orientation: portrait) {
+
+    .main_page_grid_background {
+        max-height: none;
+        max-width: none;
+        position: absolute;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: fit-content(6vh) fit-content(94%);
+        grid-template-areas: "sidepanel" "contentview";
+        width: 100vw;
+        height: auto;
+        margin: 0;
+        left: 0px;
+        right: 0px;
+        min-width: 360px;
+        top: 0px;
+    }
+    
+    .side_bar {
+        grid-area: sidepanel;
+        display: flex;
+        flex-direction: row;
+        min-height: 40px;
+        max-height: none;
+        max-width: none;
+        background-color: #7c0404;
+        width: 100%;
+        height: 100%;
+        -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.55) inset;
+        box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.55) inset;   
+    }
+
+    .side_button {
+        cursor: pointer;
+        border-radius: 1vmax 1vmax 0px 0px;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        margin-left: 0.5vw;
+        margin-right: 0.5vw;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        padding-left: 0.7vw;
+        padding-right: 0.7vw;
+        -webkit-border-radius: 1vmax 1vmax 0px 0px;
+        -moz-border-radius: 1vmax 1vmax 0px 0px;
+        -ms-border-radius: 1vmax 1vmax 0px 0px;
+        -o-border-radius: 1vmax 1vmax 0px 0px;
+}
+
+    .separator_line {
+        height: 100%;
+        margin: 0;
+        min-width: 1px;
+        max-width: 1px;
+        background-color: #262626;
+        margin-left: 0vw;
+        margin-right: 1vw;
+    }
+    .twin_logo {
+        resize: both;
+        display: flex;
+        justify-content: center;
+        max-width: 152px;
+        margin-left: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin: 10px;
+        width: 15%;
+    }
+    
+    .logo {
+        height: 100%;
+        width: auto;
+        margin: auto 0 auto 0;
+        margin-right: 0px;
+    }
+
+    .logo_text {
+        line-height: auto;
+        padding: auto;
+        height: 100%;
+        width: auto;
+        margin: auto 0 auto 0;
+    }
+
+    .sidebar_resizable_font {
+        font-size: 2.5vw;
+    }
+
+    .side_button p {
+        font-size: 1.1vmax;
+        margin-left: 0px;
+        margin-right: 0;
+    }
+
+    .content_view {
+        height: auto;
+        padding-bottom: 50px;
+    }
+}
+
+
