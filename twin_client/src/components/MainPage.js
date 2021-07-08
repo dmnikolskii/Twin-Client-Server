@@ -18,6 +18,7 @@ import TwinWatchPage from './TwinWatchPage';
 import TwinSensePage from './TwinSensePage';
 import OperationPage from './OperationPage';
 
+
 function MainPage({onModalClose, setBackground, isSupervisor}) {
     const [curPageID, setCurPageID] = useState(1);
 

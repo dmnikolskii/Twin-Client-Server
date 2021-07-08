@@ -8,8 +8,14 @@ import LinkButton from './LinkButton'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
+import Axios from 'axios'
+
 import { ReactComponent as GaugeLogo } from "../svg/gauge.svg"
 import { ReactComponent as GraphLogo } from "../svg/graph.svg"
+
+const submitLinkReq = () => {
+    Axios.post('http:localhost:3001/');
+}
 
 function TwinWatchPage() {
 
