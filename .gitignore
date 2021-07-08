@@ -1,3 +1,6 @@
 /twin_client/build
 /twin_client/node_modules
 /twin_client/public
+/twin_server/build
+/twin_server/node_modules
+/twin_server/public
