@@ -1,14 +1,12 @@
 import React from 'react'
 import LinePicker from './LinePicker'
-import { Fragment, useState, useEffect } from 'react';
+import { Fragment, useState } from 'react';
 
 import CarouselButton from './CarouselButton'
 import LinkButton from './LinkButton'
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-
-function TwinWatchPage() {
 
 const responsive = {
         
@@ -30,6 +28,8 @@ const responsive = {
         items: 1
     }
     };
+    
+function TwinWatchPage() {
 
     const [watchDataset, setWatchDataset] = useState([]);
 

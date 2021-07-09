@@ -1,5 +1,5 @@
 import React from 'react'
-import { Fragment, useRef } from 'react'
+import { Fragment } from 'react'
 import "./styles/LinkButton.css"
 
 import { ReactComponent as PieLogo } from "../svg/pie.svg"

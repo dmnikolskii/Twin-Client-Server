@@ -4,8 +4,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 20vw;
-    height: 25vh;
+    width: clamp(310px, 20vw, 416px);
+    height: clamp(255px, 25vh, 305px);
     padding: 10px;
     margin: 10px auto 10px auto;
 

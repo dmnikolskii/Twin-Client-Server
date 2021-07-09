@@ -1,13 +1,18 @@
 import React from 'react'
 import ProductionScreen from './ProductionScreen'
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import LinePicker from './LinePicker'
 import CarouselButton from './CarouselButton'
 
 function OperationPage() {
+
+    const [operationDataset, setOperationDataset] = useState([]);
+
+        console.log(operationDataset);
+        
     return (
         <Fragment>
-            <LinePicker/>
+            <LinePicker pageID={4} setDataset={setOperationDataset}/>
             <div className="container2">
                 <CarouselButton caption="Status"/>
                 <CarouselButton caption="Finish Plan"/>

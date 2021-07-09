@@ -132,7 +132,7 @@
         max-width: none;
         position: absolute;
         display: grid;
-        grid-template-columns: fit-content(12vw) auto;
+        grid-template-columns: fit-content(clamp(200px, 12vw, 240px)) auto;
         grid-template-rows: auto;
         
         grid-template-areas: "sidepanel contentview";

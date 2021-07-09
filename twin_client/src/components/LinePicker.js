@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './styles/LinePicker.css'
 
 import Dropdown from 'react-dropdown';
@@ -72,7 +72,6 @@ function LinePicker({pageID, setDataset}) {
     const [cities, setCities] = useState(plants[countries[0]]);
     const [selectedCity, setSelectedCity] = useState(plants[countries[0]]);
     const [selectedLine, setSelectedLine] = useState(lines[plants[countries[0]][0]][0]);
-    const [highlightedOption, setHighlightedOption] = useState("");
 
     const submitLinkReq = () => {      
       Axios.post('http://localhost:3001/api/fetch_links',{
@@ -93,7 +92,7 @@ function LinePicker({pageID, setDataset}) {
         setSelectedLine(lines[plants[countries[0]]][0])
     }, [country]);
 
-    useEffect(() => {
+    useEffect(() => { 
         setSelectedLine(lines[plants[countries[0]]][0])
     }, [selectedCity]);
 
@@ -105,25 +104,10 @@ function LinePicker({pageID, setDataset}) {
         console.log("Selected line:" + selectedLine);
         console.log("=====================");
         submitLinkReq();
-        // Axios.post("http://localhost:3001/");
+        
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [country, selectedCity, selectedLine]);
     
-    const options = [
-        { value: 'one', label: 'One' },
-        { value: 'two', label: 'Two', className: 'myOptionClassName' },
-        {
-         type: 'group', name: 'group1', items: [
-           { value: 'three', label: 'Three', className: 'myOptionClassName' },
-           { value: 'four', label: 'Four' }
-         ]
-        },
-        {
-         type: 'group', name: 'group2', items: [
-           { value: 'five', label: 'Five' },
-           { value: 'six', label: 'Six' }
-         ]
-        }
-      ];
     return (
         <Fragment>
             <div className="container">
