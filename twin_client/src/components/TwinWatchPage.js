@@ -1,6 +1,6 @@
 import React from 'react'
 import LinePicker from './LinePicker'
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 
 import CarouselButton from './CarouselButton'
 import LinkButton from './LinkButton'
@@ -34,11 +34,11 @@ const responsive = {
     }
     };
 
-    const [dataset, setDataset] = useState([]);
+    const [watchDataset, setWatchDataset] = useState([]);
 
     return (
         <Fragment>
-            <LinePicker setDataset={setDataset}/>
+            <LinePicker setDataset={setWatchDataset}/>
             <div className="container1">
                 <Carousel responsive={responsive} containerClass="car_container" arrows={false} centerMode={true} additionalTransfrom={2}>
                     <div>
@@ -71,9 +71,10 @@ const responsive = {
             <div className="separator_line1"></div>
 
             <div className="link_container">
-                {dataset.map((data) => {
-                    <LinkButton caption={data.caption} Icon={GraphLogo}/>
+                {watchDataset.map((data, i) => {
+                    return(<LinkButton caption={data.caption} Icon={GraphLogo}/>);
                 })}
+                
                 {/*<LinkButton caption="Line Performance Andon Dashboard" Icon={GaugeLogo}/>
                 <LinkButton caption="Process Parameters Analysis Dashboard" Icon={GraphLogo}/>
                 <LinkButton caption="Vibration Analysis Dashboard" Icon={GraphLogo}/>

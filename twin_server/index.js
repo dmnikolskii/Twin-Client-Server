@@ -42,19 +42,16 @@ app.post('/api/fetch_links', (req, res) => {
     const line = req.body.line;
     
     let sql = `SELECT * FROM twin_watch_links WHERE country = '${country}' AND plant = '${city}' AND line = '${line}';`;
-    if (city === '') sql = `SELECT * FROM twin_watch_links WHERE country = '${country}' AND line = '${line}';`;
-    if (line === '') sql = `SELECT * FROM twin_watch_links WHERE country = '${country}' AND plant = '${city}';`;
+    //if (city === '') sql = `SELECT * FROM twin_watch_links WHERE country = '${country}' AND line = '${line}';`;
+    //if (line === '') sql = `SELECT * FROM twin_watch_links WHERE country = '${country}' AND plant = '${city}';`;
     console.log(req.body);
-    if (isEmpty(req.body)) {sql = `SELECT * FROM twin_watch_links`};
+    // if (isEmpty(req.body)) {sql = `SELECT * FROM twin_watch_links`};
 
-    console.log(sql);
-    console.log(req.query);
-    // res.send(req.query);
     db.all(sql,[],(err, rows ) => {
         // console.log(err);   
         console.log(rows);
-        res.send("Hi");   
-        //res.send(rows);   
+        //res.send("Hi");   
+        res.send(rows);   
         
     });
     //db.close()    

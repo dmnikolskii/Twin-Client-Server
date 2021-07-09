@@ -81,8 +81,8 @@ function LinePicker({setDataset}) {
         line: selectedLine
       })
       .then((response) => {
-        console.log("RESPONSE: " + response);
-        // setDataset(response);
+        // console.log(response.data);
+        setDataset(response.data);
       });
     }
   
@@ -105,7 +105,7 @@ function LinePicker({setDataset}) {
         console.log("=====================");
         submitLinkReq();
         // Axios.post("http://localhost:3001/");
-    });
+    }, [country, selectedCity, selectedLine]);
     
     const options = [
         { value: 'one', label: 'One' },
