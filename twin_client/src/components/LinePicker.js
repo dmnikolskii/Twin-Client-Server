@@ -5,6 +5,8 @@ import './styles/LinePicker.css'
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
+import Axios from 'axios'
+
 const countries = [
     "Azerbaijan",
     "Jordan",
@@ -64,7 +66,7 @@ const countries = [
     "plant3":["Line-01"]
 };
 
-function LinePicker() {
+function LinePicker({setDataset}) {
 
     const [country, setCountry] = useState(countries[0]);
     const [cities, setCities] = useState(plants[countries[0]]);
@@ -72,9 +74,16 @@ function LinePicker() {
     const [selectedLine, setSelectedLine] = useState(lines[plants[countries[0]][0]][0]);
     const [highlightedOption, setHighlightedOption] = useState("");
 
-
-    let CitiesRef = useRef();
-
+    const submitLinkReq = () => {
+      Axios.post('http://localhost:3001/fetch_links/',{
+        country: country,
+        city: selectedCity,
+        line: selectedLine
+      }).then((response) => {
+        setDataset(response);
+      });
+    }
+  
     useEffect(() => {
         setCities(plants[country]);
         setSelectedCity(plants[country][0])
@@ -92,6 +101,7 @@ function LinePicker() {
         console.log("Selected city: " + selectedCity);
         console.log("Selected line:" + selectedLine);
         console.log("=====================");
+        submitLinkReq();
     });
     
     const options = [
@@ -113,10 +123,9 @@ function LinePicker() {
     return (
         <Fragment>
             <div className="container">
-
                 <Dropdown className='dropdown' controlClassName="dropdown-cont" options={countries} onChange={(e) => {setCountry(e.value); setCities(plants[e.value])}} value={country} placeholder="country" />
                 <Dropdown className='dropdown' controlClassName="dropdown-cont" options={cities} onChange={(e) => {setSelectedCity(e.value)}} value={selectedCity} placeholder="city" />
-                <Dropdown className='dropdown' controlClassName="dropdown-cont" options={lines[selectedCity]} onChange={(e) => {setSelectedLine(e.value)}} value={selectedLine} placeholder="line" />
+                <Dropdown className='dropdown' controlClassName="dropdown-cont" options={lines[selectedCity]} onChange={(e) => {setSelectedLine(e.value)}} value={selectedLine} placeholder="line" /> 
 
             </div>
         </Fragment>
