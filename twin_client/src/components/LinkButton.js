@@ -10,12 +10,8 @@ import { ReactComponent as GaugeLogo } from "../svg/gauge.svg"
 
 function LinkButton({caption, icon, link}) {
 
-
- 
-        
     return (
-        <Fragment>
-            
+        <Fragment>            
             <div className="link_button reg_label" onClick = {() => { }}>
 
                 {icon === "graph" &&  <GraphLogo fill="white" className="button_ico"/>}
