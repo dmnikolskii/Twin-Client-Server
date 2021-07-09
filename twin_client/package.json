@@ -1,7 +1,7 @@
 {
   "name": "twinsense",
   "version": "0.1.0",
-  "private": false,   
+  "private": false,
   "dependencies": {
     "@mapbox/node-pre-gyp": "^1.0.5",
     "@testing-library/jest-dom": "^5.14.1",
@@ -15,9 +15,12 @@
     "react-multi-carousel": "^2.6.3",
     "react-responsive": "^8.2.0",
     "react-responsive-combo-box": "^1.2.4",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-slick": "^0.28.1",
     "react-styled-carousel": "^0.5.1",
+    "react-svg": "^14.0.3",
     "slick-carousel": "^1.8.1",
     "sqlite3": "^5.0.2",
     "web-vitals": "^1.1.2"
@@ -47,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "file-loader": "^6.2.0",
     "react-alice-carousel": "^2.5.1"
   }
 }

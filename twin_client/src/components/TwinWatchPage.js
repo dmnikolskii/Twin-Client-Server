@@ -72,7 +72,7 @@ const responsive = {
 
             <div className="link_container">
                 {watchDataset.map((data, i) => {
-                    return(<LinkButton caption={data.caption} Icon={GraphLogo}/>);
+                    return(<LinkButton caption={data.caption} icon={data.icon} link={data.link}/>);
                 })}
                 
                 {/*<LinkButton caption="Line Performance Andon Dashboard" Icon={GaugeLogo}/>
