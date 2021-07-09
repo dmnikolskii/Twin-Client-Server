@@ -5,10 +5,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express()
 
-var corsOptions = {
-    origin: "http://localhost:3000"
-};
-
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,26 +23,20 @@ app.get("/", (req, res) => {
     console.log(req);
 });
 
-function isEmpty(obj) {
-    for(var key in obj) {
-        if(obj.hasOwnProperty(key))
-            return false;
-    }
-    return true;
-}
-
 app.post('/api/fetch_links', (req, res) => {
 
     const country = req.body.country;
     const city = req.body.city;
     const line = req.body.line;
+    const pageid = req.body.pageid;
     
-    let sql = `SELECT * FROM twin_watch_links WHERE country = '${country}' AND plant = '${city}' AND line = '${line}';`;
-    //if (city === '') sql = `SELECT * FROM twin_watch_links WHERE country = '${country}' AND line = '${line}';`;
-    //if (line === '') sql = `SELECT * FROM twin_watch_links WHERE country = '${country}' AND plant = '${city}';`;
-    console.log(req.body);
-    // if (isEmpty(req.body)) {sql = `SELECT * FROM twin_watch_links`};
+    let sql = `SELECT * FROM twin_links WHERE pageid == ${pageid} AND 
+                                                country = '${country}' AND 
+                                                plant = '${city}' AND 
+                                                line = '${line}';`;
 
+    console.log(req.body);
+    
     db.all(sql,[],(err, rows ) => {
         // console.log(err);   
         console.log(rows);
@@ -59,5 +49,5 @@ app.post('/api/fetch_links', (req, res) => {
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
+    console.log(`Server is running on port ${PORT}.`);
 });

@@ -66,7 +66,7 @@ const countries = [
     "plant3":["Line-01"]
 };
 
-function LinePicker({setDataset}) {
+function LinePicker({pageID, setDataset}) {
 
     const [country, setCountry] = useState(countries[0]);
     const [cities, setCities] = useState(plants[countries[0]]);
@@ -78,7 +78,8 @@ function LinePicker({setDataset}) {
       Axios.post('http://localhost:3001/api/fetch_links',{
         country: country,
         city: selectedCity,
-        line: selectedLine
+        line: selectedLine,
+        pageid: pageID
       })
       .then((response) => {
         // console.log(response.data);

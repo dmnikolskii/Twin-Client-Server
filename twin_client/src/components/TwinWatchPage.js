@@ -8,9 +8,6 @@ import LinkButton from './LinkButton'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-import { ReactComponent as GaugeLogo } from "../svg/gauge.svg"
-import { ReactComponent as GraphLogo } from "../svg/graph.svg"
-
 function TwinWatchPage() {
 
 const responsive = {
@@ -38,7 +35,7 @@ const responsive = {
 
     return (
         <Fragment>
-            <LinePicker setDataset={setWatchDataset}/>
+            <LinePicker pageID={1} setDataset={setWatchDataset}/>
             <div className="container1">
                 <Carousel responsive={responsive} containerClass="car_container" arrows={false} centerMode={true} additionalTransfrom={2}>
                     <div>
