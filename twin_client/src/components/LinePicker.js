@@ -74,13 +74,15 @@ function LinePicker({setDataset}) {
     const [selectedLine, setSelectedLine] = useState(lines[plants[countries[0]][0]][0]);
     const [highlightedOption, setHighlightedOption] = useState("");
 
-    const submitLinkReq = () => {
-      Axios.post('http://localhost:3001/fetch_links/',{
+    const submitLinkReq = () => {      
+      Axios.post('http://localhost:3001/api/fetch_links',{
         country: country,
         city: selectedCity,
         line: selectedLine
-      }).then((response) => {
-        setDataset(response);
+      })
+      .then((response) => {
+        console.log("RESPONSE: " + response);
+        // setDataset(response);
       });
     }
   
@@ -102,6 +104,7 @@ function LinePicker({setDataset}) {
         console.log("Selected line:" + selectedLine);
         console.log("=====================");
         submitLinkReq();
+        // Axios.post("http://localhost:3001/");
     });
     
     const options = [

@@ -5,11 +5,14 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express()
 
+var corsOptions = {
+    origin: "http://localhost:3000"
+};
+
 app.use(cors());
-app.use(express.json());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-let sql = `SELECT * FROM twin_watch_links WHERE id = 1`;
 
 let db = new sqlite3.Database('./dataset.db', (err) => {
     if (err) {
@@ -20,23 +23,44 @@ let db = new sqlite3.Database('./dataset.db', (err) => {
 });
 
 app.get("/", (req, res) => {
+    res.send('hi');
     console.log(req);
 });
 
+function isEmpty(obj) {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
 
-app.get("/fetch_links", (req, res) => {
+app.post('/api/fetch_links', (req, res) => {
+
+    const country = req.body.country;
+    const city = req.body.city;
+    const line = req.body.line;
+    
+    let sql = `SELECT * FROM twin_watch_links WHERE country = '${country}' AND plant = '${city}' AND line = '${line}';`;
+    if (city === '') sql = `SELECT * FROM twin_watch_links WHERE country = '${country}' AND line = '${line}';`;
+    if (line === '') sql = `SELECT * FROM twin_watch_links WHERE country = '${country}' AND plant = '${city}';`;
+    console.log(req.body);
+    if (isEmpty(req.body)) {sql = `SELECT * FROM twin_watch_links`};
+
+    console.log(sql);
+    console.log(req.query);
+    // res.send(req.query);
     db.all(sql,[],(err, rows ) => {
         // console.log(err);   
-        console.log(req);
-        res.send(rows[0].caption);
-
+        console.log(rows);
+        res.send("Hi");   
+        //res.send(rows);   
+        
     });
-    db.close()    
+    //db.close()    
 });
 
-
-
-
-app.listen(3001, ()=> {
-    console.log("running on port 3001");
-})
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
+});
