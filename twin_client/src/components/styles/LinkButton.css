@@ -7,7 +7,7 @@
     width: clamp(310px, 20vw, 416px);
     height: clamp(255px, 25vh, 305px);
     padding: 10px;
-    margin: 10px auto 10px auto;
+    margin: 10px;
 
     border-radius: 10px;
     border: 1px solid #E5E5E5;

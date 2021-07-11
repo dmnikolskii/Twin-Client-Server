@@ -12,7 +12,7 @@ function LinkButton({caption, icon, link}) {
 
     return (
         <Fragment>            
-            <div className="link_button reg_label" onClick = {() => { }}>
+            <a className="link_button reg_label" href={link} target="_blank" rel="noreferrer">
 
                 {icon === "graph" &&  <GraphLogo fill="white" className="button_ico"/>}
                 {icon === "pie" &&  <PieLogo fill="white" className="button_ico"/>}
@@ -22,7 +22,7 @@ function LinkButton({caption, icon, link}) {
 
                 {/*<Icon fill="white" className="button_ico"/>*/}
                 {caption}
-            </div>    
+            </a>    
         </Fragment>
     )
 }
