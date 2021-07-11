@@ -4,11 +4,10 @@
 * {
     margin: auto;
     padding: auto;
-
+    box-sizing: border-box;
     max-width: 1000px;
     /*max-height: 700px;*/
 }
-
 
 body {
     background-color: black;

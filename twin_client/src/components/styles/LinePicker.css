@@ -4,6 +4,7 @@
 }
 
 .container {
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
